@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.2.0/jquery.rateyo.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.2.0/jquery.rateyo.min.js"></script>
+     
+
+
+</head>
+<body>
+        <p style="font-size: 50px;float:left ">HTML</p>
+        <p id="rate1" style="font-size: 50px; float: right;"></p>
+
+        <br>
+        <br> 
+        <br>
+        <br>
+        <br>
+        <br>
+
+		<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Rate this site</button>
+
+
+		<div id="myModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+
+
+		<div class="modal-content">
+		<div class="modal-header">
+		  <button type="button" class="close" data-dismiss="modal">&times;</button>
+		  <h4 class="modal-title">Feedback</h4>
+		</div>
+		<div class="modal-body">
+		<div id="message" style="text-align: center; color: green;"></div>
+                <div class="form-group"> 
+                <span id="updatecapacitymodalerrortext" style="color:red"></span> 
+                  </div>
+                   <form name="myform" class="form-inline b1" action="">
+                    <div class="form-group" >
+                    <label style="display:inline-block" class="col-md-6">Rating : </label>
+                    <div style="display:inline-block;" class="col-md-6"><input type="number" name="rate" class="form-control" size="10" id="capacity_txt_modal">
+                    </div>
+                    </div>
+                   </form>
+		            </div>
+		<br/>
+		<button type="button" id="updateCapacityBtn" class="btn btn-info " onclick="return update()">Save</button>
+		<button type="button" id="capacityModalClose" class="btn btn-default" data-dismiss="modal">Close</button>
+		</div>
+		</div> 
+		<div class="modal-footer">
+		</div>
+
+		</div>
+
+<script>
+    	document.getElementById("rate1").innerHTML="Rating:"+localStorage.getItem('html3');
+</script>
+
+<script type="text/javascript">
+
+	function update(){
+		var v=document.myform.rate.value;
+        var val=parseInt(v);
+        if(localStorage.html3)
+        {
+        	var c=localStorage.getItem('html3');
+            cval=parseInt(c);
+            cval=(cval+val)/2;
+        }
+        else
+        {
+        	cval=val;
+        }
+        document.getElementById("rate1").innerHTML="Rating:"+cval;
+
+        localStorage.setItem('html3',cval);
+
+        return true;
+	}
+</script>
+</body>
+</html>
