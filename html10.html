@@ -12,7 +12,7 @@
 
 </head>
 <body>
-        <p style="font-size: 50px;float:left ">CSS</p>
+        <p style="font-size: 50px;float:left ">HTML VIDEO</p>
         <p id="rate1" style="font-size: 50px; float: right;"></p>
 
         <br>
@@ -121,7 +121,7 @@
 	}
 </script>-->
 <script>
-    	document.getElementById("rate1").innerHTML="Rating:"+localStorage.getItem('css2');
+    	document.getElementById("rate1").innerHTML="Rating:"+localStorage.getItem('html10');
 </script>
 
 <script type="text/javascript">
@@ -129,9 +129,9 @@
 	function update(){
 		var v=document.myform.rate.value;
         var val=parseInt(v);
-        if(localStorage.css2)
+        if(localStorage.html10)
         {
-        	var c=localStorage.getItem('css2');
+        	var c=localStorage.getItem('html10');
             cval=parseInt(c);
             cval=(cval+val)/2;
         }
@@ -141,7 +141,7 @@
         }
         document.getElementById("rate1").innerHTML="Rating:"+cval;
 
-        localStorage.setItem('css2',cval);
+        localStorage.setItem('html10',cval);
 
         return true;
 	}
